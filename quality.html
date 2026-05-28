@@ -193,54 +193,14 @@
                 </div>
             </div>
             
-            <!-- Right Floating B2B Form Box -->
-            <div class="footer-form-wrapper" id="footer-b2b-wrapper">
-                <h3>Tell us what you’re looking for</h3>
-                <p>Submit an inquiry to receive a custom quote within 24 business hours.</p>
+                        <!-- Right B2B Sourcing Call-to-Action Card -->
+            <div class="footer-cta-wrapper" id="footer-b2b-wrapper">
+                <h3>Ready to Source at Scale?</h3>
+                <p>Establishing stable supply contracts for manufacturers, food service corporations, supermarket groups, and international importers.</p>
                 
-                <form class="footer-form" id="b2b-inquiry-form">
-                    <div class="footer-form-group">
-                        <label for="footer-company-name">Company Name *</label>
-                        <input type="text" id="footer-company-name" placeholder="e.g., Global Foods Ltd" required>
-                    </div>
-                    <div class="footer-form-group">
-                        <label for="footer-contact-name">Contact Name *</label>
-                        <input type="text" id="footer-contact-name" placeholder="e.g., John Doe" required>
-                    </div>
-                    <div class="footer-form-group">
-                        <label for="footer-email">Business Email *</label>
-                        <input type="email" id="footer-email" placeholder="e.g., procurement@globalfoods.com" required>
-                    </div>
-                    <div class="footer-form-group">
-                        <label for="footer-product-spec">Select Product *</label>
-                        <select id="footer-product-spec" required>
-                            <option value="" disabled selected>Select Product *</option>
-                            <option value="bulk-coconut">Bulk Coconut Oil</option>
-                            <option value="cocoyum-retail">Cocoyum Consumer Oil</option>
-                            <option value="bulk-sunflower">Bulk Sunflower Oil</option>
-                            <option value="bulk-ricebran">Bulk Rice Bran Oil</option>
-                        </select>
-                    </div>
-                    <div class="footer-form-group">
-                        <label for="footer-volume">Target Volume *</label>
-                        <input type="text" id="footer-volume" placeholder="e.g. 10 Tons" required>
-                    </div>
-                    <div class="footer-form-group">
-                        <label for="footer-destination">Target Destination Port *</label>
-                        <input type="text" id="footer-destination" placeholder="e.g. Port of Jebel Ali" required>
-                    </div>
-                    <div class="footer-form-group">
-                        <label for="footer-message">Additional Specifications</label>
-                        <textarea id="footer-message" rows="3" placeholder="Specify packaging, terms..."></textarea>
-                    </div>
-                    
-                    <!-- Form Status Banner -->
-                    <div class="form-status" id="form-status-message"></div>
-                    
-                    <button type="submit" class="btn footer-form-btn">Submit Trade Inquiry</button>
-                </form>
+                <button class="btn footer-cta-btn" id="footer-open-modal-btn">Open Sourcing Form</button>
                 
-                <!-- B2B Stats below form -->
+                <!-- B2B Stats below CTA -->
                 <div class="footer-stats-strip">
                     <div class="footer-stat-item">
                         <span class="footer-stat-val">1976</span>
@@ -256,6 +216,7 @@
                     </div>
                 </div>
             </div>
+            </div>
         </div>
         
         <div class="footer-bottom">
@@ -269,12 +230,73 @@
     </footer>
 
     <!-- Floating Contact Button (FOB) -->
-    <button class="floating-contact-btn" id="fob-contact-btn" aria-label="Scroll to B2B Inquiry Form">
+    <button class="floating-contact-btn" id="fob-contact-btn" aria-label="Open B2B Sourcing Form">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
         </svg>
         Trade Inquiry
     </button>
+
+    <!-- Accessible Modal Overlay for B2B Sourcing Inquiry -->
+    <div class="modal-overlay" id="b2b-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-card">
+            <button class="modal-close-btn" aria-label="Close Inquiry Form" id="modal-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h3 id="modal-title" class="form-title">Request for Quotation</h3>
+            <p class="form-subtitle">Submit your sourcing requirements and our trade desk will respond within 24 business hours.</p>
+            
+            <form class="footer-form" id="b2b-inquiry-form">
+                <div class="form-row">
+                    <div class="footer-form-group">
+                        <label for="footer-company-name">Company Name *</label>
+                        <input type="text" id="footer-company-name" placeholder="e.g., Global Foods Ltd" required>
+                    </div>
+                    <div class="footer-form-group">
+                        <label for="footer-contact-name">Contact Name *</label>
+                        <input type="text" id="footer-contact-name" placeholder="e.g., John Doe" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="footer-form-group">
+                        <label for="footer-email">Business Email *</label>
+                        <input type="email" id="footer-email" placeholder="e.g., procurement@globalfoods.com" required>
+                    </div>
+                    <div class="footer-form-group">
+                        <label for="footer-product-spec">Select Product *</label>
+                        <select id="footer-product-spec" required>
+                            <option value="" disabled selected>-- Select Product --</option>
+                            <option value="bulk-coconut">Bulk Coconut Oil</option>
+                            <option value="cocoyum-retail">Cocoyum Consumer Oil</option>
+                            <option value="bulk-sunflower">Bulk Sunflower Oil</option>
+                            <option value="bulk-ricebran">Bulk Rice Bran Oil</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="footer-form-group">
+                        <label for="footer-volume">Target Volume *</label>
+                        <input type="text" id="footer-volume" placeholder="e.g. 10 Tons" required>
+                    </div>
+                    <div class="footer-form-group">
+                        <label for="footer-destination">Target Destination Port *</label>
+                        <input type="text" id="footer-destination" placeholder="e.g. Port of Jebel Ali" required>
+                    </div>
+                </div>
+                <div class="footer-form-group">
+                    <label for="footer-message">Additional Specifications</label>
+                    <textarea id="footer-message" rows="3" placeholder="Specify packaging, terms..."></textarea>
+                </div>
+                
+                <!-- Form Status Banner -->
+                <div class="form-status" id="form-status-message"></div>
+                
+                <button type="submit" class="btn footer-form-btn" style="width: 100%; margin-top: 1rem;">Submit Trade Inquiry</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Main JavaScript Logic -->
     <script src="js/main.js"></script>

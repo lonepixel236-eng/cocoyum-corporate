@@ -109,6 +109,16 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 showFormStatus(statusElement, 'Thank you! Your inquiry has been logged successfully. A B2B trade representative will contact you within 24 hours.', 'success');
                 formElement.reset();
+                
+                // Auto-close modal after 2 seconds if submitting the footer overlay form
+                if (formElement.id === 'b2b-inquiry-form') {
+                    setTimeout(() => {
+                        closeModal();
+                        // Reset status banner
+                        statusElement.className = 'form-status';
+                        statusElement.textContent = '';
+                    }, 2000);
+                }
             }, 1500);
         });
     }
@@ -119,8 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initialize Footer form
-    const footerForm = document.querySelector('#footer-b2b-wrapper #b2b-inquiry-form');
-    const footerStatus = document.querySelector('#footer-b2b-wrapper #form-status-message');
+    const footerForm = document.querySelector('#footer-b2b-wrapper #b2b-inquiry-form') || document.querySelector('#b2b-modal #b2b-inquiry-form');
+    const footerStatus = document.querySelector('#footer-b2b-wrapper #form-status-message') || document.querySelector('#b2b-modal #form-status-message');
     if (footerForm && footerStatus) {
         handleFormSubmission(footerForm, footerStatus);
     }
@@ -132,7 +142,67 @@ document.addEventListener('DOMContentLoaded', () => {
         handleFormSubmission(mainForm, mainStatus);
     }
 
-    // 5. Floating Action Button (FOB/FAB) Scroll Tracker
+    // 5. Accessible Modal Overlay Control (WCAG AAA Trap Focus & Escape Support)
+    const modal = document.getElementById('b2b-modal');
+    const openModalBtns = document.querySelectorAll('#fob-contact-btn, #footer-open-modal-btn');
+    const closeModalBtn = document.getElementById('modal-close-btn');
+
+    function openModal() {
+        if (modal) {
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+            
+            // Trap focus: focus on the first input inside the modal
+            const firstInput = modal.querySelector('input');
+            if (firstInput) {
+                firstInput.focus();
+            }
+        }
+    }
+
+    function closeModal() {
+        if (modal) {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+            
+            // Restore focus to the floating action button
+            const fobBtn = document.getElementById('fob-contact-btn');
+            if (fobBtn) fobBtn.focus();
+        }
+    }
+
+    if (openModalBtns.length > 0) {
+        openModalBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal();
+            });
+        });
+    }
+
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closeModal);
+    }
+
+    if (modal) {
+        // Close on backdrop overlay click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Close on Escape key press (WCAG AAA)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
+
+    // 6. Floating Action Button (FOB/FAB) Scroll Tracker
     const fobBtn = document.getElementById('fob-contact-btn');
     const footerB2B = document.getElementById('footer-b2b-wrapper');
     
@@ -146,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const scrollPos = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
             const threshold = 150; // Show sooner as the user scrolls
             
-            // Check if footer B2B form is in the viewport (with a 150px buffer so it doesn't hide too early)
+            // Check if footer B2B wrapper (CTA card) is in the viewport
             let footerVisible = false;
             if (footerB2B) {
                 const rect = footerB2B.getBoundingClientRect();
@@ -159,11 +229,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 fobBtn.classList.remove('visible');
             }
         }
-        
-        fobBtn.addEventListener('click', () => {
-            if (footerB2B) {
-                footerB2B.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
     }
 });
