@@ -3,15 +3,18 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Highlight Active Nav Link
+    // 1. Highlight Active Nav Link (Robust Path Matching)
     const currentPath = window.location.pathname;
+    const pageName = currentPath.substring(currentPath.lastIndexOf('/') + 1);
     const navLinks = document.querySelectorAll('.nav-links a');
     
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (currentPath.includes(href) && href !== 'index.html' && href !== './') {
+        const linkPage = href.substring(href.lastIndexOf('/') + 1);
+        
+        if (pageName === linkPage) {
             link.classList.add('active');
-        } else if ((currentPath.endsWith('/') || currentPath.endsWith('index.html')) && (href === 'index.html' || href === './')) {
+        } else if ((pageName === '' || pageName === 'index.html') && (linkPage === 'index.html' || linkPage === '')) {
             link.classList.add('active');
         } else {
             link.classList.remove('active');
@@ -39,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Product Filtering System (for products.html)
+    // 3. Product Filtering System with Micro-Animations (for products.html)
     const filterButtons = document.querySelectorAll('.filter-btn');
     const productCards = document.querySelectorAll('.product-grid .product-card');
     
@@ -54,14 +57,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 productCards.forEach(card => {
                     const type = card.getAttribute('data-type');
                     if (filterValue === 'all' || type === filterValue) {
-                        card.style.display = 'flex';
+                        card.classList.remove('hidden');
                         card.style.opacity = '0';
+                        card.style.transform = 'translateY(15px)';
                         setTimeout(() => {
                             card.style.opacity = '1';
-                            card.style.transition = 'opacity 0.4s ease';
+                            card.style.transform = 'translateY(0)';
+                            card.style.transition = 'opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)';
                         }, 50);
                     } else {
-                        card.style.display = 'none';
+                        card.classList.add('hidden');
                     }
                 });
             });
@@ -74,17 +79,17 @@ document.addEventListener('DOMContentLoaded', () => {
         return re.test(email);
     }
     
-    function handleFormSubmission(formElement, statusElement, prefixId = '') {
+    function handleFormSubmission(formElement, statusElement) {
         formElement.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // Resolve element selectors based on form context
-            const companyName = formElement.querySelector(prefixId ? `#company-name-${prefixId}` : '#company-name').value.trim();
-            const contactName = formElement.querySelector(prefixId ? `#contact-name-${prefixId}` : '#contact-name').value.trim();
-            const email = formElement.querySelector(prefixId ? `#email-${prefixId}` : '#email').value.trim();
-            const volume = formElement.querySelector(prefixId ? `#volume-${prefixId}` : '#volume').value.trim();
-            const product = formElement.querySelector(prefixId ? `#product-spec-${prefixId}` : '#product-spec').value;
-            const destination = formElement.querySelector(prefixId ? `#destination-${prefixId}` : '#destination').value.trim();
+            // Resolve element selectors supporting both standard and footer-prefixed IDs
+            const companyName = formElement.querySelector('#company-name, #footer-company-name').value.trim();
+            const contactName = formElement.querySelector('#contact-name, #footer-contact-name').value.trim();
+            const email = formElement.querySelector('#email, #footer-email').value.trim();
+            const volume = formElement.querySelector('#volume, #footer-volume').value.trim();
+            const product = formElement.querySelector('#product-spec, #footer-product-spec').value;
+            const destination = formElement.querySelector('#destination, #footer-destination').value.trim();
             
             if (!companyName || !contactName || !email || !volume || !product || !destination) {
                 showFormStatus(statusElement, 'Please fill in all required fields.', 'error');
@@ -107,32 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function showFormStatus(statusElement, message, type) {
         statusElement.textContent = message;
-        statusElement.className = 'form-status'; // Reset styling classes
-        
-        if (type === 'success') {
-            statusElement.classList.add('success');
-            statusElement.style.display = 'block';
-            statusElement.style.backgroundColor = '#d1e7dd';
-            statusElement.style.color = '#0f5132';
-            statusElement.style.border = '1px solid #badbcc';
-            statusElement.style.padding = '0.75rem';
-            statusElement.style.marginTop = '0.5rem';
-        } else if (type === 'error') {
-            statusElement.classList.add('error');
-            statusElement.style.display = 'block';
-            statusElement.style.backgroundColor = '#f8d7da';
-            statusElement.style.color = '#842029';
-            statusElement.style.border = '1px solid #f5c2c7';
-            statusElement.style.padding = '0.75rem';
-            statusElement.style.marginTop = '0.5rem';
-        } else {
-            statusElement.style.display = 'block';
-            statusElement.style.backgroundColor = '#cff4fc';
-            statusElement.style.color = '#055160';
-            statusElement.style.border = '1px solid #b6effb';
-            statusElement.style.padding = '0.75rem';
-            statusElement.style.marginTop = '0.5rem';
-        }
+        statusElement.className = 'form-status ' + type;
     }
 
     // Initialize Footer form

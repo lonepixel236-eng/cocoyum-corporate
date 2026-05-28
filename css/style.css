@@ -1464,3 +1464,86 @@ footer {
         padding: 3rem 2rem;
     }
 }
+
+/* ==========================================================================
+   UX & Heuristic Improvements
+   ========================================================================== */
+
+/* 1. Button Micro-Animations */
+.btn {
+    transition: background-color var(--transition-normal), transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+/* 2. Clickable Contact Link Styles */
+.contact-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color var(--transition-normal);
+}
+
+.contact-link:hover {
+    color: var(--primary-light);
+}
+
+.footer-nav-col p a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: underline;
+    transition: color var(--transition-normal);
+}
+
+.footer-nav-col p a:hover {
+    color: var(--white);
+}
+
+/* 3. Centralized Form Status Styling (Clean Code) */
+.form-status {
+    display: none;
+    padding: 0.85rem 1.1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    border-radius: var(--border-radius-sm);
+    margin-top: 1.25rem;
+    font-family: var(--font-sans);
+    text-align: left;
+}
+
+.form-status.success {
+    display: block !important;
+    background-color: #d1e7dd !important;
+    color: #0f5132 !important;
+    border: 1px solid #badbcc !important;
+}
+
+.form-status.error {
+    display: block !important;
+    background-color: #f8d7da !important;
+    color: #842029 !important;
+    border: 1px solid #f5c2c7 !important;
+}
+
+.form-status.info {
+    display: block !important;
+    background-color: #cff4fc !important;
+    color: #055160 !important;
+    border: 1px solid #b6effb !important;
+}
+
+/* 4. Product Grid Transition Utilities */
+.product-card {
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), display 0s;
+}
+
+.product-card.hidden {
+    display: none !important;
+}
