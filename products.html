@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Portfolio | New Periyar Oil Mills & Cocoyum Retail</title>
+    <meta name="description" content="Browse our edible oil portfolio. Featuring bulk industrial coconut, sunflower, and rice bran oils, and premium consumer retail brands Cocoyum and Parisudham.">
+    <meta name="keywords" content="Bulk Coconut Oil, Refined Sunflower Oil, Cocoyum Retail, Parisudham Sesame Oil, Oil Specifications, Tanker Supplies">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌴</text></svg>">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header id="main-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo-anchor" id="nav-logo">
+                <span class="logo-main">New Periyar Oil Mills</span>
+                <span class="logo-sub">A Premium Consumer Brand by New Periyar Oil Mills</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Toggle Navigation" id="menu-toggle-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav>
+                <ul class="nav-links" id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="heritage.html">Our Heritage</a></li>
+                    <li><a href="infrastructure.html">Infrastructure & Tech</a></li>
+                    <li><a href="products.html" class="active">Product Portfolio</a></li>
+                    <li><a href="quality.html">Quality & Compliance</a></li>
+                    <li><a href="b2b.html">B2B / Exports</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        
+        <!-- Page Header -->
+        <section class="hero" style="padding: 5rem 2rem; background: linear-gradient(135deg, rgba(36, 66, 42, 0.95) 0%, rgba(30, 37, 31, 0.98) 100%);">
+            <div class="hero-content" style="text-align: center; margin: 0 auto;">
+                <span class="subtitle" style="color: var(--secondary-color);">Our Catalog</span>
+                <h1 style="font-size: 2.75rem; color: var(--white);">Premium Oils Formulated for Purity and Scale</h1>
+                <p style="color: rgba(255,255,255,0.85); max-width: 700px; margin: 0 auto;">Explore our extensive range of high-performance bulk industrial inputs and beautifully packaged premium retail brands.</p>
+            </div>
+        </section>
+
+        <!-- Product Matrix & Filters -->
+        <section class="container" id="product-matrix">
+            <div class="section-title-wrap">
+                <span class="subtitle">Categorized Supply</span>
+                <h2 class="section-title">The Edible Oil Range</h2>
+            </div>
+            
+            <!-- Filters -->
+            <div class="products-filter" id="portfolio-filters">
+                <button class="filter-btn active" data-filter="all" id="filter-all-btn">All Products</button>
+                <button class="filter-btn" data-filter="bulk" id="filter-bulk-btn">Bulk & Industrial Supply</button>
+                <button class="filter-btn" data-filter="retail" id="filter-retail-btn">Retail Consumer Brands</button>
+            </div>
+            
+            <!-- Grid (Wellness Journey style card tile layout) -->
+            <div class="product-grid" id="portfolio-grid">
+                
+                <!-- Product 1 (Bulk Coconut Oil) -->
+                <div class="product-card card" data-type="bulk" id="prod-bulk-coconut">
+                    <div class="card-tile bg-sage">
+                        <img src="assets/industrial_mill.png" alt="Industrial Bulk Crude & Refined Coconut Oil Loading">
+                    </div>
+                    <div class="product-details">
+                        <div>
+                            <h3 class="product-title">Bulk Crude & Refined Coconut Oil</h3>
+                            <p class="product-desc">Extracted from premium Kerala copra. Ideal for food processing, bakery manufacturing, and cosmetics.</p>
+                        </div>
+                        <ul class="product-specs">
+                            <li><span>FFA:</span> <span>&lt; 0.1% (Refined) / &lt; 0.5% (Crude)</span></li>
+                            <li><span>Moisture:</span> <span>&lt; 0.1%</span></li>
+                            <li><span>Iodine Value:</span> <span>7.5 – 10.5</span></li>
+                            <li><span>Packing:</span> <span>Tankers, Flexitanks, Drums, IBCs</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Product 2 (Cocoyum Coconut Oil) -->
+                <div class="product-card card" data-type="retail" id="prod-retail-cocoyum">
+                    <div class="card-tile bg-tan">
+                        <img src="assets/retail_packaging.png" alt="Cocoyum Premium Coconut Oil Retail Pack">
+                    </div>
+                    <div class="product-details">
+                        <div>
+                            <h3 class="product-title">Cocoyum Pure Coconut Oil</h3>
+                            <p class="product-desc">Our flagship consumer product. 100% natural, double-filtered coconut oil with rich aroma and long shelf life.</p>
+                        </div>
+                        <ul class="product-specs">
+                            <li><span>FFA:</span> <span>&lt; 0.25%</span></li>
+                            <li><span>Moisture:</span> <span>&lt; 0.1%</span></li>
+                            <li><span>Certifications:</span> <span>AGMARK Grade 1, FSSAI</span></li>
+                            <li><span>Packing:</span> <span>100ml / 250ml / 500ml / 1L Bottles & Pouches</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Product 3 (Bulk Sunflower Oil) -->
+                <div class="product-card card" data-type="bulk" id="prod-bulk-sunflower">
+                    <div class="card-tile bg-peach">
+                        <img src="assets/industrial_mill.png" alt="Bulk Refined Sunflower Oil Tank Loading">
+                    </div>
+                    <div class="product-details">
+                        <div>
+                            <h3 class="product-title">Bulk Refined Sunflower Oil</h3>
+                            <p class="product-desc">High-clarity, winterized refined sunflower oil. Processed for light viscosity and stable frying qualities.</p>
+                        </div>
+                        <ul class="product-specs">
+                            <li><span>FFA (as Oleic):</span> <span>&lt; 0.08%</span></li>
+                            <li><span>Peroxide Value:</span> <span>&lt; 1.0 meq/kg</span></li>
+                            <li><span>Color:</span> <span>Lovibond Y-10, R-1.0 max</span></li>
+                            <li><span>Packing:</span> <span>Road Tankers, Flexibags, 210L Barrels</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Product 4 (Parisudham Coconut Oil) -->
+                <div class="product-card card" data-type="retail" id="prod-retail-parisudham-coconut">
+                    <div class="card-tile bg-slate">
+                        <img src="assets/retail_packaging.png" alt="Parisudham Coconut Oil Retail Pack">
+                    </div>
+                    <div class="product-details">
+                        <div>
+                            <h3 class="product-title">Parisudham Premium Coconut Oil</h3>
+                            <p class="product-desc">A household heritage favorite in Kerala. Traditional taste made using advanced expeller press technology.</p>
+                        </div>
+                        <ul class="product-specs">
+                            <li><span>FFA:</span> <span>&lt; 0.3%</span></li>
+                            <li><span>Moisture:</span> <span>&lt; 0.1%</span></li>
+                            <li><span>Certifications:</span> <span>AGMARK Approved, FSSAI Licensed</span></li>
+                            <li><span>Packing:</span> <span>500ml / 1L Pouches, 1L Pet Bottles</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Product 5 (Bulk Rice Bran) -->
+                <div class="product-card card" data-type="bulk" id="prod-bulk-ricebran">
+                    <div class="card-tile bg-sage">
+                        <img src="assets/industrial_mill.png" alt="Bulk Refined Rice Bran & Sesame Oil Storage">
+                    </div>
+                    <div class="product-details">
+                        <div>
+                            <h3 class="product-title">Bulk Refined Rice Bran Oil</h3>
+                            <p class="product-desc">High-smoke point oil rich in Oryzanol. Heavily supplied to snack food manufacturers and bulk packers.</p>
+                        </div>
+                        <ul class="product-specs">
+                            <li><span>FFA:</span> <span>&lt; 0.1%</span></li>
+                            <li><span>Oryzanol Content:</span> <span>10,000 ppm min</span></li>
+                            <li><span>Smoke Point:</span> <span>232&deg;C (450&deg;F)</span></li>
+                            <li><span>Packing:</span> <span>Bulk Tankers, IBCs, 200L Drums</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Product 6 (Parisudham Sesame Oil) -->
+                <div class="product-card card" data-type="retail" id="prod-retail-sesame">
+                    <div class="card-tile bg-tan">
+                        <img src="assets/retail_packaging.png" alt="Parisudham Pure Sesame Gingelly Oil Retail Pack">
+                    </div>
+                    <div class="product-details">
+                        <div>
+                            <h3 class="product-title">Parisudham Pure Sesame Oil</h3>
+                            <p class="product-desc">Pure Gingelly oil made from roasted black sesame seeds and palm jaggery, using traditional cold pressing configurations.</p>
+                        </div>
+                        <ul class="product-specs">
+                            <li><span>FFA (as Oleic):</span> <span>&lt; 1.5%</span></li>
+                            <li><span>Aroma:</span> <span>Authentic nutty scent</span></li>
+                            <li><span>Certifications:</span> <span>AGMARK Grade 1, FSSAI</span></li>
+                            <li><span>Packing:</span> <span>200ml / 500ml / 1L Pet Bottles</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Product Customization Note -->
+        <section class="container" style="background-color: var(--tile-tan); border-radius: var(--border-radius-sm); margin-bottom: 4rem;" id="product-customization">
+            <div class="snapshot-grid" style="grid-template-columns: 1fr 1fr; align-items: center; padding: 2.5rem;">
+                <div>
+                    <span class="subtitle">Custom Formulations</span>
+                    <h2>Tailored Industrial Blends</h2>
+                    <p>At New Periyar Oil Mills, we understand that every food manufacturer has distinct viscosity, smoke point, and flavor requirements. Our laboratory works directly with your R&D teams to deliver specialized oil blends.</p>
+                    <p>We also offer private-label packing capabilities for domestic and export retail chains, supplying coconut and sesame oils under your custom store brands with full certification support.</p>
+                </div>
+                <div class="snapshot-text" style="border-left: 1px solid var(--neutral-light); padding-left: 3rem;">
+                    <h3 style="margin-bottom: 1rem; font-family: var(--font-serif);">Export Logistics</h3>
+                    <p>We routinely export to the GCC countries, Europe, and Southeast Asia. Our logistics team handles customs documentation, certificate of origin filings, and container shipping coordination directly from Cochin Port (located just 35km from our Aluva plant).</p>
+                    <a href="b2b.html" class="btn btn-primary" style="margin-top: 1.5rem;" id="products-b2b-cta">Request Specifications Sheet</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Area -->
+    <footer id="main-footer">
+        <div class="footer-grid-layout">
+            <!-- Left Info Column -->
+            <div class="footer-info">
+                <div>
+                    <div class="footer-logo-main">New Periyar Oil Mills</div>
+                    <div class="footer-logo-sub">A Premium Consumer Brand by New Periyar Oil Mills</div>
+                    <p style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">An ISO 22000:2018 & AGMARK certified manufacturer and global exporter of high-purity coconut and edible vegetable oils.</p>
+                </div>
+                
+                <div class="footer-navs">
+                    <div class="footer-nav-col">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="heritage.html">Our Heritage</a></li>
+                            <li><a href="infrastructure.html">Infrastructure & Tech</a></li>
+                            <li><a href="products.html">Product Portfolio</a></li>
+                            <li><a href="quality.html">Quality & Compliance</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-col">
+                        <h4>Head Office</h4>
+                        <p style="font-size: 0.85rem; line-height: 1.6; margin-bottom: 0.5rem;">New Periyar Oil Mills,<br>Sreemoolanagaram P.O., Aluva,<br>Kerala, PIN - 683580</p>
+                        <p style="font-size: 0.85rem;"><strong>Email:</strong> b2b@newperiyaroilmills.com<br><strong>Phone:</strong> +91 484 259 8650</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Floating B2B Form Box -->
+            <div class="footer-form-wrapper" id="footer-b2b-wrapper">
+                <h3>Tell us what you’re looking for</h3>
+                <p>Submit an inquiry to receive a custom quote within 24 business hours.</p>
+                
+                <form class="footer-form" id="b2b-inquiry-form">
+                    <input type="text" id="company-name" placeholder="Company Name *" required>
+                    <input type="text" id="contact-name" placeholder="Contact Name *" required>
+                    <input type="email" id="email" placeholder="Business Email *" required>
+                    
+                    <select id="product-spec" required>
+                        <option value="" disabled selected>Select Product *</option>
+                        <option value="bulk-coconut">Bulk Coconut Oil</option>
+                        <option value="cocoyum-retail">Cocoyum Consumer Oil</option>
+                        <option value="bulk-sunflower">Bulk Sunflower Oil</option>
+                        <option value="bulk-ricebran">Bulk Rice Bran Oil</option>
+                    </select>
+                    
+                    <input type="text" id="volume" placeholder="Target Volume (e.g. 10 Tons) *" required>
+                    <input type="text" id="destination" placeholder="Target Destination Port *" required>
+                    <textarea id="message" rows="3" placeholder="Additional specifications..."></textarea>
+                    
+                    <!-- Form Status Banner -->
+                    <div class="form-status" id="form-status-message"></div>
+                    
+                    <button type="submit" class="btn footer-form-btn">Submit Trade Inquiry</button>
+                </form>
+                
+                <!-- B2B Stats below form -->
+                <div class="footer-stats-strip">
+                    <div class="footer-stat-item">
+                        <span class="footer-stat-val">1976</span>
+                        <span class="footer-stat-lbl">Established</span>
+                    </div>
+                    <div class="footer-stat-item">
+                        <span class="footer-stat-val">30k L</span>
+                        <span class="footer-stat-lbl">Daily Cap</span>
+                    </div>
+                    <div class="footer-stat-item">
+                        <span class="footer-stat-val">98%</span>
+                        <span class="footer-stat-lbl">On-Time Ship</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div>&copy; 2026 New Periyar Oil Mills. All Rights Reserved.</div>
+            <div class="footer-certs-strip">
+                <span>ISO 22000:2018 Certified</span>
+                <span>AGMARK Quality Approved</span>
+                <span>FSSAI Licensed</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript Logic -->
+    <script src="js/main.js"></script>
+</body>
+</html>
