@@ -341,7 +341,7 @@ main {
     width: 100%;
     max-width: 500px;
     height: 350px;
-    background-color: var(--tile-sage);
+    background-color: var(--tile-tan);
     padding: 1rem;
     display: flex;
     align-items: center;
