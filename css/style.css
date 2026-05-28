@@ -833,16 +833,25 @@ main {
     text-align: center;
 }
 
-.cert-icon-placeholder {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: var(--tile-sage);
-    color: var(--primary-color);
+.cert-logo-container {
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 1.5rem auto;
+}
+
+.cert-logo-img {
+    max-height: 60px;
+    max-width: 140px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.cert-card:hover .cert-logo-img {
+    transform: scale(1.08);
 }
 
 /* Footer featuring full landscape image and floating dark green form card */
