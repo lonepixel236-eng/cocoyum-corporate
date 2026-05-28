@@ -1,5 +1,5 @@
 /* ==========================================================================
-   New Periyar Oil Mills - Interactivity Script (Refactored)
+   Cocoyum - Interactivity Script (Refactored)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
