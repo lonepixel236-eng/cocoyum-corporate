@@ -154,15 +154,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const footerB2B = document.getElementById('footer-b2b-wrapper');
     
     if (fobBtn) {
-        window.addEventListener('scroll', () => {
-            const scrollPos = window.scrollY;
-            const threshold = 300;
+        // Trigger check on load in case the user starts partially scrolled
+        checkFobVisibility();
+        
+        window.addEventListener('scroll', checkFobVisibility);
+        
+        function checkFobVisibility() {
+            const scrollPos = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+            const threshold = 150; // Show sooner as the user scrolls
             
-            // Check if footer B2B form is in the viewport to avoid button overlap
+            // Check if footer B2B form is in the viewport (with a 150px buffer so it doesn't hide too early)
             let footerVisible = false;
             if (footerB2B) {
                 const rect = footerB2B.getBoundingClientRect();
-                footerVisible = (rect.top < window.innerHeight && rect.bottom >= 0);
+                footerVisible = (rect.top < (window.innerHeight - 150) && rect.bottom >= 0);
             }
             
             if (scrollPos > threshold && !footerVisible) {
@@ -170,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 fobBtn.classList.remove('visible');
             }
-        });
+        }
         
         fobBtn.addEventListener('click', () => {
             if (footerB2B) {
