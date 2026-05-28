@@ -831,6 +831,13 @@ main {
     border: 1px solid var(--neutral-light);
     padding: 2.5rem 2rem;
     text-align: center;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
 }
 
 .cert-logo-container {
@@ -842,16 +849,30 @@ main {
 }
 
 .cert-logo-img {
-    max-height: 60px;
-    max-width: 140px;
     width: auto;
     height: auto;
     object-fit: contain;
-    transition: transform 0.3s ease;
+    filter: grayscale(1) opacity(0.6);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Optical Alignment Sizing for Logos */
+#cert-iso .cert-logo-img {
+    max-height: 48px; /* ISO Square */
+}
+
+#cert-agmark .cert-logo-img {
+    max-height: 56px; /* AGMARK Circle */
+}
+
+#cert-fssai .cert-logo-img {
+    max-height: 44px; /* FSSAI Wide Rectangle */
+    max-width: 130px;
 }
 
 .cert-card:hover .cert-logo-img {
-    transform: scale(1.08);
+    filter: grayscale(0) opacity(1);
+    transform: scale(1.06);
 }
 
 /* Footer featuring full landscape image and floating dark green form card */
