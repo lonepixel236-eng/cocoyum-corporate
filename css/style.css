@@ -904,7 +904,7 @@ main {
 /* Footer featuring full landscape image and floating dark green form card */
 footer {
     background: linear-gradient(180deg, rgba(250, 248, 245, 0.9) 0%, rgba(36, 66, 42, 0.95) 100%), 
-                url('../assets/periyar_groves.png') no-repeat center center/cover;
+                url('../assets/groves_illustration.png') no-repeat center center/cover;
     padding: 6rem 2rem 3rem 2rem;
     color: rgba(255, 255, 255, 0.85);
     border-top: 1px solid var(--neutral-light);
