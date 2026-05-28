@@ -904,30 +904,9 @@ main {
 /* Footer featuring full landscape image and floating dark green form card */
 footer {
     background-color: var(--primary-color);
-    position: relative;
     padding: 6rem 2rem 3rem 2rem;
     color: rgba(255, 255, 255, 0.85);
     border-top: 1px solid var(--neutral-light);
-    overflow: hidden;
-}
-
-footer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../assets/groves_illustration.png') no-repeat center center/cover;
-    opacity: 0.12;
-    filter: brightness(0) invert(1);
-    pointer-events: none;
-    z-index: 0;
-}
-
-footer > * {
-    position: relative;
-    z-index: 1;
 }
 
 .footer-grid-layout {
