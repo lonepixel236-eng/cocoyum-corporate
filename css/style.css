@@ -903,11 +903,31 @@ main {
 
 /* Footer featuring full landscape image and floating dark green form card */
 footer {
-    background: linear-gradient(180deg, rgba(250, 248, 245, 0.9) 0%, rgba(36, 66, 42, 0.95) 100%), 
-                url('../assets/groves_illustration.png') no-repeat center center/cover;
+    background-color: var(--primary-color);
+    position: relative;
     padding: 6rem 2rem 3rem 2rem;
     color: rgba(255, 255, 255, 0.85);
     border-top: 1px solid var(--neutral-light);
+    overflow: hidden;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/groves_illustration.png') no-repeat center center/cover;
+    opacity: 0.12;
+    filter: brightness(0) invert(1);
+    pointer-events: none;
+    z-index: 0;
+}
+
+footer > * {
+    position: relative;
+    z-index: 1;
 }
 
 .footer-grid-layout {
@@ -985,11 +1005,12 @@ footer {
 
 .footer-nav-col ul li a {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.75);
+    transition: color var(--transition-normal);
 }
 
 .footer-nav-col ul li a:hover {
-    color: var(--white);
+    color: var(--secondary-color);
 }
 
 /* Floating B2B Form Box */
@@ -1057,9 +1078,9 @@ footer {
 .footer-stats-strip {
     display: flex;
     justify-content: space-between;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--neutral-light);
 }
 
 .footer-stat-item {
@@ -1071,12 +1092,12 @@ footer {
     font-family: var(--font-serif);
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--white);
+    color: var(--primary-color);
 }
 
 .footer-stat-lbl {
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--neutral-medium);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -1559,7 +1580,7 @@ footer {
 }
 
 .footer-nav-col p a:hover {
-    color: var(--white);
+    color: var(--secondary-color);
 }
 
 /* 3. Centralized Form Status Styling (Clean Code) */
@@ -1728,11 +1749,12 @@ body.modal-open {
 
 /* Footer Sourcing Call-To-Action Box */
 .footer-cta-wrapper {
-    background-color: var(--primary-color);
+    background-color: var(--white);
     padding: 3.5rem 3rem;
     border-radius: var(--border-radius-sm);
     box-shadow: var(--shadow-lg);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--neutral-light);
+    border-top: 4px solid var(--primary-color);
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -1740,7 +1762,7 @@ body.modal-open {
 }
 
 .footer-cta-wrapper h3 {
-    color: var(--white);
+    color: var(--primary-color);
     font-size: 1.75rem;
     font-family: var(--font-serif);
     margin-bottom: 0px;
@@ -1749,22 +1771,24 @@ body.modal-open {
 .footer-cta-wrapper p {
     font-size: 0.95rem;
     line-height: 1.65;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--neutral-dark);
     margin-bottom: 0.5rem;
 }
 
 .footer-cta-btn {
     align-self: flex-start;
-    background-color: var(--white);
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--white);
     font-weight: 600;
     border: none;
     padding: 1rem 2rem;
     width: auto;
+    transition: background-color var(--transition-normal), transform var(--transition-normal);
 }
 
 .footer-cta-btn:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
 }
 
 /* Adjust form controls inside white modal card */
