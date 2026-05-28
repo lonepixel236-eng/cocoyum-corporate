@@ -89,7 +89,7 @@ header {
 }
 
 .nav-container {
-    max-width: 1300px;
+    max-width: 1440px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -163,7 +163,7 @@ main {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 5rem 2rem;
 }
@@ -234,7 +234,7 @@ main {
 }
 
 .hero-grid {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -275,7 +275,7 @@ main {
 
 .hero-floating-image {
     width: 100%;
-    max-width: 420px;
+    max-width: 500px;
     height: auto;
     filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.12));
     animation: float 6s ease-in-out infinite;
@@ -294,7 +294,7 @@ main {
 }
 
 .page-hero-grid {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -328,8 +328,8 @@ main {
 
 .page-hero-frame {
     width: 100%;
-    max-width: 440px;
-    height: 300px;
+    max-width: 500px;
+    height: 350px;
     background-color: var(--tile-sage);
     padding: 1rem;
     display: flex;
@@ -746,7 +746,7 @@ footer {
 }
 
 .footer-grid-layout {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1.1fr 1fr;
@@ -902,7 +902,7 @@ footer {
 
 /* Bottom copyrights */
 .footer-bottom {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     padding-top: 2rem;
     display: flex;
