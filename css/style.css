@@ -870,10 +870,35 @@ main {
     max-width: 130px;
 }
 
+#cert-haccp .cert-logo-img {
+    max-height: 54px; /* HACCP Circle */
+}
+
+#cert-gmp .cert-logo-img {
+    max-height: 54px; /* GMP Circle */
+}
+
+#cert-halal .cert-logo-img {
+    max-height: 52px; /* Halal Circle */
+}
+
+#cert-cdb .cert-logo-img {
+    max-height: 54px; /* CDB Circle */
+}
+
+#cert-lei .cert-logo-img {
+    max-height: 48px; /* LEI Rectangle */
+}
+
+#cert-organic .cert-logo-img {
+    max-height: 54px; /* Organic Seal */
+}
+
 .cert-card:hover .cert-logo-img {
     filter: grayscale(0) opacity(1);
     transform: scale(1.06);
 }
+
 
 /* Footer featuring full landscape image and floating dark green form card */
 footer {
