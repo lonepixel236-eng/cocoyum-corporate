@@ -21,16 +21,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 2. Mobile Menu Toggle
+    // 2. Mobile Menu Toggle (WCAG A11y Attributes)
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-links');
     
     if (menuToggle && navMenu) {
+        menuToggle.setAttribute('aria-expanded', 'false');
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
+            const isActive = navMenu.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
             const spans = menuToggle.querySelectorAll('span');
             spans.forEach((span, index) => {
-                if (navMenu.classList.contains('active')) {
+                if (isActive) {
                     if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 5px)';
                     if (index === 1) span.style.opacity = '0';
                     if (index === 2) span.style.transform = 'rotate(-45deg) translate(5px, -5px)';

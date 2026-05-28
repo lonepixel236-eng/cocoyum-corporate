@@ -186,21 +186,40 @@
                 <p>Submit an inquiry to receive a custom quote within 24 business hours.</p>
                 
                 <form class="footer-form" id="b2b-inquiry-form">
-                    <input type="text" id="footer-company-name" aria-label="Company Name" placeholder="Company Name *" required>
-                    <input type="text" id="footer-contact-name" aria-label="Contact Name" placeholder="Contact Name *" required>
-                    <input type="email" id="footer-email" aria-label="Business Email" placeholder="Business Email *" required>
-                    
-                    <select id="footer-product-spec" aria-label="Product Specification" required>
-                        <option value="" disabled selected>Select Product *</option>
-                        <option value="bulk-coconut">Bulk Coconut Oil</option>
-                        <option value="cocoyum-retail">Cocoyum Consumer Oil</option>
-                        <option value="bulk-sunflower">Bulk Sunflower Oil</option>
-                        <option value="bulk-ricebran">Bulk Rice Bran Oil</option>
-                    </select>
-                    
-                    <input type="text" id="footer-volume" aria-label="Target Volume" placeholder="Target Volume (e.g. 10 Tons) *" required>
-                    <input type="text" id="footer-destination" aria-label="Target Destination" placeholder="Target Destination Port *" required>
-                    <textarea id="footer-message" aria-label="Additional Specifications" rows="3" placeholder="Additional specifications..."></textarea>
+                    <div class="footer-form-group">
+                        <label for="footer-company-name">Company Name *</label>
+                        <input type="text" id="footer-company-name" placeholder="e.g., Global Foods Ltd" required>
+                    </div>
+                    <div class="footer-form-group">
+                        <label for="footer-contact-name">Contact Name *</label>
+                        <input type="text" id="footer-contact-name" placeholder="e.g., John Doe" required>
+                    </div>
+                    <div class="footer-form-group">
+                        <label for="footer-email">Business Email *</label>
+                        <input type="email" id="footer-email" placeholder="e.g., procurement@globalfoods.com" required>
+                    </div>
+                    <div class="footer-form-group">
+                        <label for="footer-product-spec">Select Product *</label>
+                        <select id="footer-product-spec" required>
+                            <option value="" disabled selected>Select Product *</option>
+                            <option value="bulk-coconut">Bulk Coconut Oil</option>
+                            <option value="cocoyum-retail">Cocoyum Consumer Oil</option>
+                            <option value="bulk-sunflower">Bulk Sunflower Oil</option>
+                            <option value="bulk-ricebran">Bulk Rice Bran Oil</option>
+                        </select>
+                    </div>
+                    <div class="footer-form-group">
+                        <label for="footer-volume">Target Volume *</label>
+                        <input type="text" id="footer-volume" placeholder="e.g. 10 Tons" required>
+                    </div>
+                    <div class="footer-form-group">
+                        <label for="footer-destination">Target Destination Port *</label>
+                        <input type="text" id="footer-destination" placeholder="e.g. Port of Jebel Ali" required>
+                    </div>
+                    <div class="footer-form-group">
+                        <label for="footer-message">Additional Specifications</label>
+                        <textarea id="footer-message" rows="3" placeholder="Specify packaging, terms..."></textarea>
+                    </div>
                     
                     <!-- Form Status Banner -->
                     <div class="form-status" id="form-status-message"></div>
