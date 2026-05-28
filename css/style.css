@@ -669,6 +669,104 @@ main {
     border-bottom-color: var(--primary-color);
 }
 
+/* Premium Borderless Product Cards */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 4rem 2.5rem;
+    margin-top: 3rem;
+}
+
+.product-card {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-normal);
+}
+
+.product-card .card-tile {
+    height: 340px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: none;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.product-card:hover .card-tile {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.product-card .card-tile img {
+    height: 75%;
+    width: 75%;
+    object-fit: contain;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.product-card:hover .card-tile img {
+    transform: scale(1.04);
+}
+
+.product-details {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.product-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--neutral-darkest);
+    margin-bottom: 0px;
+    line-height: 1.25;
+}
+
+.product-desc {
+    font-size: 0.95rem;
+    color: var(--neutral-dark);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.product-specs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.product-specs li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--neutral-light);
+    font-size: 0.85rem;
+}
+
+.product-specs li:first-child {
+    border-top: 1px solid var(--neutral-light);
+}
+
+.product-specs li span:first-child {
+    font-weight: 500;
+    color: var(--neutral-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+}
+
+.product-specs li span:last-child {
+    font-weight: 600;
+    color: var(--neutral-darkest);
+}
+
 /* About Seller Technical Specifications Table */
 .specs-table-wrapper {
     margin-top: 2rem;
