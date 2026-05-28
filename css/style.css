@@ -99,7 +99,18 @@ header {
 
 .logo-anchor {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+}
+
+.logo-img {
+    height: 46px;
+    width: auto;
+    display: block;
+    transition: transform var(--transition-normal);
+}
+
+.logo-anchor:hover .logo-img {
+    transform: scale(1.02);
 }
 
 .logo-main {
@@ -861,6 +872,22 @@ footer {
     height: 100%;
 }
 
+.footer-logo-anchor {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo-img {
+    height: 52px;
+    width: auto;
+    display: block;
+    transition: transform var(--transition-normal);
+}
+
+.footer-logo-anchor:hover .footer-logo-img {
+    transform: scale(1.02);
+}
+
 .footer-logo-main {
     font-family: var(--font-serif);
     font-weight: 700;
@@ -1039,6 +1066,14 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .logo-img {
+        height: 38px;
+    }
+    
+    .footer-logo-img {
+        height: 44px;
+    }
+
     .nav-links {
         display: none;
         flex-direction: column;
