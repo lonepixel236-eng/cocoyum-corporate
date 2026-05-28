@@ -341,19 +341,19 @@ main {
     width: 100%;
     max-width: 500px;
     height: 350px;
-    background-color: var(--tile-tan);
+    background-color: transparent;
     padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--neutral-light);
+    box-shadow: none;
+    border: none;
 }
 
-.page-hero-frame.bg-tan { background-color: var(--tile-tan); }
-.page-hero-frame.bg-peach { background-color: var(--tile-peach); }
-.page-hero-frame.bg-slate { background-color: var(--tile-slate); }
+.page-hero-frame.bg-tan { background-color: transparent; }
+.page-hero-frame.bg-peach { background-color: transparent; }
+.page-hero-frame.bg-slate { background-color: transparent; }
 
 .page-hero-frame img {
     width: 100%;
