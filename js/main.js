@@ -148,4 +148,34 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mainForm && mainStatus) {
         handleFormSubmission(mainForm, mainStatus);
     }
+
+    // 5. Floating Action Button (FOB/FAB) Scroll Tracker
+    const fobBtn = document.getElementById('fob-contact-btn');
+    const footerB2B = document.getElementById('footer-b2b-wrapper');
+    
+    if (fobBtn) {
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            const threshold = 300;
+            
+            // Check if footer B2B form is in the viewport to avoid button overlap
+            let footerVisible = false;
+            if (footerB2B) {
+                const rect = footerB2B.getBoundingClientRect();
+                footerVisible = (rect.top < window.innerHeight && rect.bottom >= 0);
+            }
+            
+            if (scrollPos > threshold && !footerVisible) {
+                fobBtn.classList.add('visible');
+            } else {
+                fobBtn.classList.remove('visible');
+            }
+        });
+        
+        fobBtn.addEventListener('click', () => {
+            if (footerB2B) {
+                footerB2B.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
 });
