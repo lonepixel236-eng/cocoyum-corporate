@@ -1219,3 +1219,97 @@ footer {
         font-size: 0.75rem;
     }
 }
+
+/* Premium Minimalist Form Styling for B2B Sourcing */
+.form-wrapper-clean {
+    background-color: var(--canvas-bg);
+    padding: 3.5rem 3rem;
+    border: 1px solid var(--neutral-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.b2b-form-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.form-group-clean {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.form-group-clean label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--neutral-medium);
+    margin-bottom: 0.5rem;
+}
+
+.form-group-clean input,
+.form-group-clean select,
+.form-group-clean textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--neutral-light);
+    padding: 0.6rem 0;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--neutral-darkest);
+    transition: border-color 0.3s ease;
+    border-radius: 0;
+    width: 100%;
+}
+
+.form-group-clean input::placeholder,
+.form-group-clean textarea::placeholder {
+    color: rgba(63, 71, 64, 0.35);
+    font-weight: 300;
+    font-size: 0.95rem;
+}
+
+.form-group-clean input:focus,
+.form-group-clean select:focus,
+.form-group-clean textarea:focus {
+    outline: none;
+    border-bottom-color: var(--primary-color);
+}
+
+.form-submit-btn-clean {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 1.1rem 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.form-submit-btn-clean:hover {
+    background-color: var(--primary-light);
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 2.25rem;
+    }
+    
+    .form-wrapper-clean {
+        padding: 2.5rem 1.75rem;
+    }
+}

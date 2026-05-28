@@ -105,60 +105,73 @@
                         </li>
                     </ul>
                 </div>
-                
-                <!-- B2B Form Wrapper -->
-                <div class="form-wrapper" style="border: 1px solid var(--neutral-light); border-radius: var(--border-radius-sm);">
-                    <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center; font-family: var(--font-serif);">Request for Quotation (RFQ)</h3>
+                              <!-- B2B Form Wrapper (Premium Minimalist Grid Layout) -->
+                <div class="form-wrapper-clean">
+                    <h3 style="margin-bottom: 2rem; font-size: 1.75rem; text-align: center; font-family: var(--font-serif);">Request for Quotation</h3>
                     
-                    <form class="b2b-form" id="b2b-inquiry-form-main" style="display: flex; flex-direction: column; gap: 1.25rem;">
+                    <form class="b2b-form-main" id="b2b-inquiry-form-main">
                         
-                        <div class="form-group">
-                            <label style="font-size: 0.8rem; font-weight: 600;" for="company-name">Company Name *</label>
-                            <input type="text" id="company-name" style="border-radius: var(--border-radius-sm); border: 1px solid var(--neutral-light); padding: 0.75rem 1rem;" placeholder="e.g., Global Foods Ltd" required>
+                        <!-- Row 1: Company & Contact -->
+                        <div class="form-row">
+                            <div class="form-group-clean">
+                                <label for="company-name">Company Name *</label>
+                                <input type="text" id="company-name" placeholder="e.g., Global Foods Ltd" required>
+                            </div>
+                            <div class="form-group-clean">
+                                <label for="contact-name">Contact Person *</label>
+                                <input type="text" id="contact-name" placeholder="e.g., John Doe" required>
+                            </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label style="font-size: 0.8rem; font-weight: 600;" for="contact-name">Contact Person Name *</label>
-                            <input type="text" id="contact-name" style="border-radius: var(--border-radius-sm); border: 1px solid var(--neutral-light); padding: 0.75rem 1rem;" placeholder="e.g., John Doe" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label style="font-size: 0.8rem; font-weight: 600;" for="email">Business Email *</label>
-                            <input type="email" id="email" style="border-radius: var(--border-radius-sm); border: 1px solid var(--neutral-light); padding: 0.75rem 1rem;" placeholder="e.g., procurement@globalfoods.com" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label style="font-size: 0.8rem; font-weight: 600;" for="product-spec">Product Type *</label>
-                            <select id="product-spec" style="border-radius: var(--border-radius-sm); border: 1px solid var(--neutral-light); padding: 0.75rem 1rem;" required>
-                                <option value="" disabled selected>-- Select Product --</option>
-                                <option value="bulk-crude-coconut">Bulk Crude Coconut Oil</option>
-                                <option value="bulk-refined-coconut">Bulk Refined Coconut Oil</option>
-                                <option value="cocoyum-retail-coconut">Cocoyum Consumer Coconut Oil</option>
-                                <option value="bulk-refined-sunflower">Bulk Refined Sunflower Oil</option>
-                                <option value="bulk-refined-ricebran">Bulk Refined Rice Bran Oil</option>
-                                <option value="custom-blend">Custom Formulation / Blend</option>
-                            </select>
+                        <!-- Row 2: Email & Phone -->
+                        <div class="form-row">
+                            <div class="form-group-clean">
+                                <label for="email">Business Email *</label>
+                                <input type="email" id="email" placeholder="e.g., procurement@globalfoods.com" required>
+                            </div>
+                            <div class="form-group-clean">
+                                <label for="phone">Phone / WhatsApp</label>
+                                <input type="tel" id="phone" placeholder="e.g., +1 (555) 019-2834">
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label style="font-size: 0.8rem; font-weight: 600;" for="volume">Target Volume *</label>
-                            <input type="text" id="volume" style="border-radius: var(--border-radius-sm); border: 1px solid var(--neutral-light); padding: 0.75rem 1rem;" placeholder="e.g., 20 Metric Tons / 5,000 Retail Cases" required>
+                        <!-- Row 3: Product Type & Volume -->
+                        <div class="form-row">
+                            <div class="form-group-clean">
+                                <label for="product-spec">Product Type *</label>
+                                <select id="product-spec" required>
+                                    <option value="" disabled selected>-- Select Product --</option>
+                                    <option value="bulk-crude-coconut">Bulk Crude Coconut Oil</option>
+                                    <option value="bulk-refined-coconut">Bulk Refined Coconut Oil</option>
+                                    <option value="cocoyum-retail-coconut">Cocoyum Consumer Coconut Oil</option>
+                                    <option value="bulk-refined-sunflower">Bulk Refined Sunflower Oil</option>
+                                    <option value="bulk-refined-ricebran">Bulk Refined Rice Bran Oil</option>
+                                    <option value="custom-blend">Custom Formulation / Blend</option>
+                                </select>
+                            </div>
+                            <div class="form-group-clean">
+                                <label for="volume">Target Volume *</label>
+                                <input type="text" id="volume" placeholder="e.g., 20 Metric Tons / 5,000 Cases" required>
+                            </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label style="font-size: 0.8rem; font-weight: 600;" for="destination">Target Delivery Destination *</label>
-                            <input type="text" id="destination" style="border-radius: var(--border-radius-sm); border: 1px solid var(--neutral-light); padding: 0.75rem 1rem;" placeholder="e.g., Port of Jebel Ali, Dubai, UAE" required>
+                        <!-- Destination (Full Width) -->
+                        <div class="form-group-clean">
+                            <label for="destination">Target Delivery Destination *</label>
+                            <input type="text" id="destination" placeholder="e.g., Port of Jebel Ali, Dubai, UAE" required>
                         </div>
                         
-                        <div class="form-group">
-                            <label style="font-size: 0.8rem; font-weight: 600;" for="message">Detailed Specifications / Packaging Requests</label>
-                            <textarea id="message" style="border-radius: var(--border-radius-sm); border: 1px solid var(--neutral-light); padding: 0.75rem 1rem;" rows="4" placeholder="Specify details regarding target FFA parameters, shipping terms (FOB/CIF), etc..."></textarea>
+                        <!-- Message (Full Width) -->
+                        <div class="form-group-clean">
+                            <label for="message">Detailed Specifications / Packaging Requests</label>
+                            <textarea id="message" rows="4" placeholder="Specify details regarding target FFA parameters, shipping terms (FOB/CIF), private labeling..."></textarea>
                         </div>
                         
                         <!-- Status Messages -->
                         <div class="form-status" id="form-status-message-main"></div>
                         
-                        <button type="submit" class="btn btn-primary" style="margin-top: 1rem;" id="b2b-submit-btn-main">Submit Trade Inquiry</button>
+                        <!-- Submit Button -->
+                        <button type="submit" class="form-submit-btn-clean" id="b2b-submit-btn-main">Submit Sourcing Request</button>
                         
                     </form>
                 </div>
