@@ -43,12 +43,19 @@
     <!-- Main Content Area -->
     <main>
         
-        <!-- Page Header -->
-        <section class="hero" style="padding: 5rem 2rem; background: linear-gradient(135deg, rgba(36, 66, 42, 0.95) 0%, rgba(30, 37, 31, 0.98) 100%);">
-            <div class="hero-content" style="text-align: center; margin: 0 auto;">
-                <span class="subtitle" style="color: var(--secondary-color);">Partnership Channels</span>
-                <h1 style="font-size: 2.75rem; color: var(--white);">Enterprise Logistics & Sourcing Infrastructure</h1>
-                <p style="color: rgba(255,255,255,0.85); max-width: 700px; margin: 0 auto;">Establishing stable supply contracts for manufacturers, food service corporations, supermarket groups, and international importers.</p>
+        <!-- Shared Split Page Hero -->
+        <section class="page-hero">
+            <div class="page-hero-grid">
+                <div class="page-hero-content">
+                    <span class="subtitle">Partnership Channels</span>
+                    <h1>Enterprise Logistics & Sourcing</h1>
+                    <p>Establishing stable supply contracts for manufacturers, food service corporations, supermarket groups, and international importers.</p>
+                </div>
+                <div class="page-hero-image-wrap">
+                    <div class="page-hero-frame bg-slate">
+                        <img src="assets/periyar_groves.png" alt="Sourcing Groves in Kerala, India">
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -99,29 +106,29 @@
                     </ul>
                 </div>
                 
-                <!-- B2B Form Wrapper (Page Specific Main Form, styled flat/sharp) -->
+                <!-- B2B Form Wrapper -->
                 <div class="form-wrapper" style="border: 1px solid var(--neutral-light); border-radius: var(--border-radius-sm);">
                     <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center; font-family: var(--font-serif);">Request for Quotation (RFQ)</h3>
                     
                     <form class="b2b-form" id="b2b-inquiry-form-main" style="display: flex; flex-direction: column; gap: 1.25rem;">
                         
                         <div class="form-group">
-                            <label style="font-size: 0.8rem; font-weight: 600;" for="company-name-main">Company Name *</label>
+                            <label style="font-size: 0.8rem; font-weight: 600;" for="company-name">Company Name *</label>
                             <input type="text" id="company-name" style="border-radius: var(--border-radius-sm); border: 1px solid var(--neutral-light); padding: 0.75rem 1rem;" placeholder="e.g., Global Foods Ltd" required>
                         </div>
                         
                         <div class="form-group">
-                            <label style="font-size: 0.8rem; font-weight: 600;" for="contact-name-main">Contact Person Name *</label>
+                            <label style="font-size: 0.8rem; font-weight: 600;" for="contact-name">Contact Person Name *</label>
                             <input type="text" id="contact-name" style="border-radius: var(--border-radius-sm); border: 1px solid var(--neutral-light); padding: 0.75rem 1rem;" placeholder="e.g., John Doe" required>
                         </div>
                         
                         <div class="form-group">
-                            <label style="font-size: 0.8rem; font-weight: 600;" for="email-main">Business Email *</label>
+                            <label style="font-size: 0.8rem; font-weight: 600;" for="email">Business Email *</label>
                             <input type="email" id="email" style="border-radius: var(--border-radius-sm); border: 1px solid var(--neutral-light); padding: 0.75rem 1rem;" placeholder="e.g., procurement@globalfoods.com" required>
                         </div>
                         
                         <div class="form-group">
-                            <label style="font-size: 0.8rem; font-weight: 600;" for="product-spec-main">Product Type *</label>
+                            <label style="font-size: 0.8rem; font-weight: 600;" for="product-spec">Product Type *</label>
                             <select id="product-spec" style="border-radius: var(--border-radius-sm); border: 1px solid var(--neutral-light); padding: 0.75rem 1rem;" required>
                                 <option value="" disabled selected>-- Select Product --</option>
                                 <option value="bulk-crude-coconut">Bulk Crude Coconut Oil</option>
@@ -134,17 +141,17 @@
                         </div>
 
                         <div class="form-group">
-                            <label style="font-size: 0.8rem; font-weight: 600;" for="volume-main">Target Volume *</label>
+                            <label style="font-size: 0.8rem; font-weight: 600;" for="volume">Target Volume *</label>
                             <input type="text" id="volume" style="border-radius: var(--border-radius-sm); border: 1px solid var(--neutral-light); padding: 0.75rem 1rem;" placeholder="e.g., 20 Metric Tons / 5,000 Retail Cases" required>
                         </div>
                         
                         <div class="form-group">
-                            <label style="font-size: 0.8rem; font-weight: 600;" for="destination-main">Target Delivery Destination *</label>
+                            <label style="font-size: 0.8rem; font-weight: 600;" for="destination">Target Delivery Destination *</label>
                             <input type="text" id="destination" style="border-radius: var(--border-radius-sm); border: 1px solid var(--neutral-light); padding: 0.75rem 1rem;" placeholder="e.g., Port of Jebel Ali, Dubai, UAE" required>
                         </div>
                         
                         <div class="form-group">
-                            <label style="font-size: 0.8rem; font-weight: 600;" for="message-main">Detailed Specifications / Packaging Requests</label>
+                            <label style="font-size: 0.8rem; font-weight: 600;" for="message">Detailed Specifications / Packaging Requests</label>
                             <textarea id="message" style="border-radius: var(--border-radius-sm); border: 1px solid var(--neutral-light); padding: 0.75rem 1rem;" rows="4" placeholder="Specify details regarding target FFA parameters, shipping terms (FOB/CIF), etc..."></textarea>
                         </div>
                         
